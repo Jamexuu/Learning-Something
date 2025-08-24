@@ -5,5 +5,4 @@
         echo "Password: {$password} <br>
         Email: {$email} <br>";
     }
-
 ?>
