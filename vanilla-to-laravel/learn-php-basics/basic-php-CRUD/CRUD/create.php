@@ -9,8 +9,7 @@ if(isset($_POST['create'])){
     $sqlCreate = $connection->prepare($queryCreate);
     $sqlCreate->execute([$username, $password]);
 
-    echo "<script> alert('User created successfully!'); </script>";
-    echo "<script> window.location.href = '/vanilla-to-laravel/learn-php-basics/basic-php-CRUD/index.php'; </script>";
+    echo '<script>alert("User added successfully!"); window.location.href="../index.php";</script>';
 }else{
-    echo "<script> window.location.href = '/vanilla-to-laravel/learn-php-basics/basic-php-CRUD/index.php'; </script>";
+    echo '<script> window.location.href="../index.php";</script>';
 }

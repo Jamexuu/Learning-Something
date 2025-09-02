@@ -129,7 +129,7 @@
 </head>
 <body>
     <div class="main">
-        <form action="/vanilla-to-laravel/learn-php-basics/basic-php-CRUD/CRUD/create.php" class="create-main" method="post">
+        <form action="/learn-php-basics/basic-php-CRUD/CRUD/create.php" class="create-main" method="post">
             <h3>CREATE USER</h3>
             <input type="text" name="username" placeholder="Enter username" required>
             <input type="text" name="password" placeholder="Enter password" required>
@@ -153,11 +153,15 @@
                     <td><?php echo $account['user_name']; ?></td>
                     <td><?php echo $account['password']; ?></td>
                     <td>
-                        <form action="#" method="get">
-                            <input type="submit" value="Edit">
+                        <form action="/learn-php-basics/basic-php-CRUD/CRUD/update.php" method="post">
+                            <input type="hidden" name="editID" value="<?php echo $account['id']; ?>">
+                            <input type="hidden" name="editUsername" value="<?php echo $account['user_name']; ?>">
+                            <input type="hidden" name="editPassword" value="<?php echo $account['password']; ?>">
+                            <input type="submit" name="edit" value="Edit">
                         </form>
-                        <form action="#" method="get">
-                            <input type="submit" value="Delete">
+                        <form action="/learn-php-basics/basic-php-CRUD/CRUD/delete.php" method="post">
+                            <input type="submit" name="delete" value="Delete">
+                            <input type="hidden" name="deleteID" value="<?php echo $account['id']; ?>">
                         </form>
                     </td>
                 </tbody>
