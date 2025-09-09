@@ -1,3 +1,11 @@
-<?php
-print_r(PDO::getAvailableDrivers());
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Login</title>
+</head>
+<body>
+    <span>Welcome To Session Login Page</span>
+</body>
+</html>
