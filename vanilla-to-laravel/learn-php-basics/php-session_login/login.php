@@ -8,7 +8,7 @@
     }
 
     if ($_SESSION['status'] == 'valid'){
-        echo "<script>window.location.href='index.php'</script>";
+        echo "<script>window.location.href='home.php'</script>";
     }
 
     if (isset($_POST['login'])){
@@ -21,10 +21,12 @@
             $queryValidate = "SELECT * FROM accounts WHERE username = ? AND password = ?";
             $sqlValidate = $connection->prepare($queryValidate);
             $sqlValidate->execute([$username, md5($password)]);
+
+            $result = $sqlValidate->fetch();
             
-            if ($sqlValidate->rowCount() > 0){
-                $_SESSION['status'] = 'loggedin';
-                echo "<script>window.location.href='index.php'</script>";
+            if ($result){
+                $_SESSION['status'] = 'valid';
+                echo "<script>window.location.href='home.php'</script>";
             } else{
                 $_SESSION['status'] = 'invalid';
                 echo "Invalid Username or Password";
