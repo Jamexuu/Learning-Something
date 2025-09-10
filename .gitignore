@@ -1,2 +1,2 @@
 #ignore personal config files
-db.config.php
+**/db.config.php
