@@ -3,12 +3,16 @@
 
   session_start();
 
+  function pathTo($destination){
+    echo "<script>window.location.href='$destination'</script>";
+  }
+
   if ($_SESSION['status'] == 'invalid' || empty($_SESSION['status'])){
     $_SESSION['status'] = 'invalid';
   }
 
   if ($_SESSION['status'] == 'valid'){
-    echo "<script>window.location.href='home.php'</script>";
+    pathTo('home.php');
   }
 
   if (isset($_POST['login'])){
@@ -26,7 +30,7 @@
         
       if ($result){
           $_SESSION['status'] = 'valid';
-          echo "<script>window.location.href='home.php'</script>";
+          pathTo('home.php');
       } else{
           $_SESSION['status'] = 'invalid';
           echo "Invalid Username or Password";
