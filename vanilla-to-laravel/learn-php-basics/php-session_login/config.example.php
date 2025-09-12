@@ -1,5 +1,4 @@
 <?php
-
 /*
     This is a configuration file for database connection settings.
     Rename this file to config.php and update the values accordingly.

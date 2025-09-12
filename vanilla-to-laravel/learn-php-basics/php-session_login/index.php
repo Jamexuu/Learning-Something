@@ -8,7 +8,7 @@ if (isset($_POST['login'])) {
 }
 ?>
 
-<?php include 'bootstap.php'; ?>
+<?php include 'bootstrap.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 
